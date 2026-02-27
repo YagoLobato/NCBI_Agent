@@ -14,7 +14,7 @@ retry_config = types.HttpRetryOptions(
     http_status_codes=[429, 500, 503, 504],  # Retry on these HTTP errors
 )
 
-Symbol_agent = LlmAgent(
+root_agent = LlmAgent(
     model=Gemini(model="gemini-2.5-flash", retry_options=retry_config),
     name="Symbol_agent",
     instruction="Use google search to provide back ONLY the NCBI symbol for the requested gene in humans",
